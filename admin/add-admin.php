@@ -37,9 +37,14 @@ require "../partials/footer.php";
 <?php
     if(isset($_POST['submit'])){
         // 1. get the data from the form
-        $fullname = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = md5($_POST['password']); //Password Encryption
+        // $fullname = $_POST['full_name'];
+        // $username = $_POST['username'];
+        // $password = md5($_POST['password']); //Password Encryption
+
+        $fullname = mysqli_real_escape_string($con, $_POST['full_name']);
+        $username = mysqli_real_escape_string( $con, $_POST['username']);
+        $raw_password = md5($_POST['password']); //Password Encryption
+        $password = mysqli_real_escape_string($con, $raw_password);
 
         // 2. SQL Query to save the data into the database
         $sql = "INSERT INTO tbl_admin (fullname, username, password) VALUES ('$fullname', '$username', '$password')";

@@ -90,7 +90,7 @@ include('../partials/header.php');
                             </tr>
                     <tr>
                     <td>
-                        <input type="submit" class="btn-secondary2" name="submit" value="Add Food">
+                        <input type="submit" class="btn-secondary1" name="submit" value="Add Food">
                     </td>
                          </tr>
                     </table>
@@ -102,8 +102,10 @@ include('../partials/header.php');
                     // check if the submit button is working or not
                     if(isset($_POST['submit'])){
                         // get all the data from the form
-                        $title2 = $_POST['title'];
-                        $description = $_POST['description'];
+                        // $title2 = $_POST['title'];
+                        // $description = $_POST['description'];
+                        $title2 = mysqli_real_escape_string($con, $_POST['title']);
+                        $description = mysqli_real_escape_string($con, $_POST['description']);
                         $price = $_POST['price'];
                         $category = $_POST['category'];
                         

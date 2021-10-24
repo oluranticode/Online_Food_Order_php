@@ -103,7 +103,8 @@ if(isset($_GET['id'])){
              if(isset($_POST['submit'])){
                  // Get data from the form 
                  $id = $_POST['id'];
-                 $title = $_POST['title'];
+                //  $title = $_POST['title'];
+                $title = mysqli_real_escape_string($con, $_POST['title']);
                  $current_image = $_POST['image_name'];
                  $featured = $_POST['featured'];
                  $active = $_POST['active'];

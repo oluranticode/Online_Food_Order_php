@@ -151,7 +151,7 @@
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
 
-                    <input type="submit" name="submit" value="Update Food" class="btn-secondary">
+                    <input type="submit" name="submit" value="Update Food" class="btn-secondary1">
                 </td>
             </tr>
         
@@ -167,8 +167,10 @@
 
                 //1. Get all the details from the form
                 $id = $_POST['id'];
-                $title = $_POST['title'];
-                $description = $_POST['description'];
+                // $title = $_POST['title'];
+                // $description = $_POST['description'];
+                $title = mysqli_real_escape_string($con, $_POST['title']);
+                $description = mysqli_real_escape_string($con, $_POST['description']);
                 $price = $_POST['price'];
                 $current_image = $_POST['current_image'];
                 $category = $_POST['category'];

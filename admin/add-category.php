@@ -62,7 +62,8 @@
         if(isset($_POST["submit"])){
            
             // 1. Get the data from the category form
-            $title = $_POST['title'];
+            // $title = $_POST['title'];
+            $title = mysqli_real_escape_string($con, $_POST['title']);
            
             // for the radio input, we want to check whether the button is selected or not
             if(isset($_POST['featured'])){

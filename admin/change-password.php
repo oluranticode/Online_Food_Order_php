@@ -41,9 +41,18 @@ require "../partials/header.php";
                         if(isset($_POST['submit'])){
                             // 1. Get the data from the form
                                 $id = $_POST['id'];
-                                $current_password = md5($_POST['current_password']);
-                                $new_password = md5($_POST['new_password']);
-                                $confirm_password = md5($_POST['confirm_password']);
+                                // $current_password = md5($_POST['current_password']);
+                                // $new_password = md5($_POST['new_password']);
+                                // $confirm_password = md5($_POST['confirm_password']);
+
+                                $raw_current_password = md5($_POST['current_password']);
+                                $current_password = mysqli_real_escape_string($con, $raw_current_password);
+
+                                $raw_new_password = md5($_POST['new_password']);
+                                $new_password = mysqli_real_escape_string($con, $raw_new_password);
+
+                                $raw_confirm_password = md5($_POST['confirm_password']);
+                                $confirm_password = mysqli_real_escape_string($con, $raw_confirm_password);
 
                             // 2. Check whether the user with current id and password exist or not
                             $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password='$current_password'";

@@ -59,8 +59,11 @@ require "../partials/header.php";
                    if(isset($_POST['submit'])){
                     //    getting all the values in the database
                     $id = $_POST['id'];
-                    $fullname = $_POST['full_name'];
-                    $username = $_POST['username'];
+                    // $fullname = $_POST['full_name'];
+                    // $username = $_POST['username'];
+
+                    $fullname = mysqli_real_escape_string($con, $_POST['full_name']);
+                    $username = mysqli_real_escape_string($con, $_POST['username']);
 
                     //Create query to update data in the table 
                     $sql_update = "UPDATE tbl_admin SET fullname='$fullname', username='$username' WHERE id=$id ";
