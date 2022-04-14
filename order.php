@@ -120,11 +120,11 @@
                 $res2 = mysqli_query($con, $sql2);
             // check if the query is executed or not
                 if($res2){
-                    $_SESSION['order-msg'] = "<div class='success'>ordered successfully</div>";
+                    $_SESSION['order-msg'] = "<div class='success'>Ordered Successfully</div>";
                     // redirect to home page
                 header("location:".SITEURL);
                 } else {
-                    $_SESSION['order-msg'] = "<div class='error'>ordered successfully</div>";
+                    $_SESSION['order-msg'] = "<div class='error'>Ordered Failed</div>";
                     // redirect to home page
                 header("location:".SITEURL);
                 }

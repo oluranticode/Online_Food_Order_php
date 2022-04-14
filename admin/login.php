@@ -54,8 +54,8 @@
         // $username = $_POST['username'];
         // $password = md5($_POST['password']);
         $username = mysqli_real_escape_string($con, $_POST['username']);
-        $raw_password = md5($_POST['password']);
-        $password = mysqli_real_escape_string($con, $raw_password);
+        // $raw_password = md5($_POST['password']);
+        $password = mysqli_real_escape_string($con, $_POST['password']);
 
         // 2. Create query to check whether the username and the password exist
         $sql = "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password' ";

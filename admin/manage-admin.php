@@ -83,7 +83,7 @@ require "../partials/header.php";
 
                                 // getting the individual data from the database
                                   $id = $row['id'];
-                                  $fullname = $row['fullname'];
+                                  $fullname = $row['full_name'];
                                   $username = $row['username'];
 
                                  ?>
